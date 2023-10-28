@@ -163,19 +163,14 @@ GO
 
 -- SEED
 
--- Insertar datos de ejemplo en la tabla products
-INSERT INTO products (name, description, presentation, price, supplier_id)
+-- Insertar datos de ejemplo en la tabla sales_regions
+INSERT INTO sales_regions (country, region_name)
 VALUES 
-    ('Laptop Lenovo ThinkPad T490', '14" Business Laptop', 'Standard', 1099.99, 1),
-    ('Samsung Galaxy S20', '6.2" Smartphone', '128GB, Cosmic Gray', 999.99, 2),
-    ('Sony WH-1000XM4 Wireless Headphones', 'Noise Cancelling Headphones', 'Black', 349.99, 3),
-    ('Apple iPad Air (4th Gen)', '10.9" Tablet', '256GB, Space Gray', 649.00, 1),
-    ('Canon EOS R6 Mirrorless Camera', '20.1 MP Full-Frame Camera', 'Body Only', 2499.00, 4),
-    ('Dell UltraSharp U2720Q 27" Monitor', '4K UHD IPS Monitor', '27 Inch', 699.99, 5),
-    ('Bose QuietComfort Earbuds', 'Noise Cancelling Earbuds', 'Soapstone', 279.00, 3),
-    ('Logitech MX Master 3 Wireless Mouse', 'Advanced Wireless Mouse', 'Graphite', 99.99, 5),
-    ('Samsung 970 EVO Plus 1TB NVMe SSD', 'Internal Solid State Drive', 'M.2 NVMe Interface', 169.99, 6),
-    ('Amazon Echo Show 10 (3rd Gen)', 'Smart Display with Motion', 'Charcoal', 249.99, 7);
+    ('USA', 'East Coast'),
+    ('Canada', 'Ontario'),
+    ('UK', 'London'),
+    ('Germany', 'Bavaria'),
+    ('Australia', 'Sydney');
 GO
 
 -- Insertar datos de ejemplo en la tabla suppliers
@@ -198,12 +193,17 @@ VALUES
     ('Chris Wilson', 32, 'M', 2);
 GO
 
--- Insertar datos de ejemplo en la tabla sales_regions
-INSERT INTO sales_regions (country, region_name)
+-- Insertar datos de ejemplo en la tabla products
+INSERT INTO products (name, description, presentation, price, supplier_id)
 VALUES 
-    ('USA', 'East Coast'),
-    ('Canada', 'Ontario'),
-    ('UK', 'London'),
-    ('Germany', 'Bavaria'),
-    ('Australia', 'Sydney');
+    ('Laptop Lenovo ThinkPad T490', '14" Business Laptop', 'Standard', 1099.99, 1),
+    ('Samsung Galaxy S20', '6.2" Smartphone', '128GB, Cosmic Gray', 999.99, 2),
+    ('Sony WH-1000XM4 Wireless Headphones', 'Noise Cancelling Headphones', 'Black', 349.99, 3),
+    ('Apple iPad Air (4th Gen)', '10.9" Tablet', '256GB, Space Gray', 649.00, 1),
+    ('Canon EOS R6 Mirrorless Camera', '20.1 MP Full-Frame Camera', 'Body Only', 2499.00, 4),
+    ('Dell UltraSharp U2720Q 27" Monitor', '4K UHD IPS Monitor', '27 Inch', 699.99, 5),
+    ('Bose QuietComfort Earbuds', 'Noise Cancelling Earbuds', 'Soapstone', 279.00, 3),
+    ('Logitech MX Master 3 Wireless Mouse', 'Advanced Wireless Mouse', 'Graphite', 99.99, 5),
+    ('Samsung 970 EVO Plus 1TB NVMe SSD', 'Internal Solid State Drive', 'M.2 NVMe Interface', 169.99, 5),
+    ('Amazon Echo Show 10 (3rd Gen)', 'Smart Display with Motion', 'Charcoal', 249.99, 5);
 GO
