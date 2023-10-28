@@ -10,10 +10,21 @@ CREATE PROCEDURE CreateProduct
     @supplierId INT
 AS
 BEGIN
-    INSERT INTO products (name, description, presentation, price, supplier_id, created_at, updated_at, active)
-    VALUES (@name, @description, @presentation, @price, @supplierId, GETDATE(), GETDATE(), 1)
+    INSERT INTO products (name, description, presentation, price, supplier_id, active)
+    VALUES (@name, @description, @presentation, @price, @supplierId, 1)
 END;
 GO
+
+SELECT * FROM products GO
+
+/* EXEC CreateProduct 
+    @name = 'Nombre del Producto',
+    @description = 'Descripción del Producto',
+    @presentation = 'Presentación del Producto',
+    @price = 100.00,
+    @supplierId = 1;
+GO
+*/
 
 -- Leer productos activos
 CREATE PROCEDURE ReadActiveProducts
@@ -23,6 +34,8 @@ BEGIN
 END;
 GO
 
+ -- EXEC ReadActiveProducts; 
+
 -- Leer producto por ID
 CREATE PROCEDURE ReadProductById
     @id INT
@@ -31,6 +44,11 @@ BEGIN
     SELECT * FROM products WHERE id = @id AND active = 1
 END;
 GO
+
+/*EXEC ReadProductById 
+    @id = 29;
+GO
+*/
 
 -- Actualizar producto
 CREATE PROCEDURE UpdateProduct
@@ -44,7 +62,7 @@ AS
 BEGIN
     UPDATE products
     SET name = @name, description = @description, presentation = @presentation, 
-        price = @price, supplier_id = @supplierId, updated_at = GETDATE()
+        price = @price, supplier_id = @supplierId
     WHERE id = @id AND active = 1
 END;
 GO
@@ -55,7 +73,7 @@ CREATE PROCEDURE DeleteProduct
 AS
 BEGIN
     UPDATE products
-    SET active = 0, updated_at = GETDATE()
+    SET active = 0
     WHERE id = @id AND active = 1
 END;
 GO
@@ -66,7 +84,7 @@ CREATE PROCEDURE RestoreProduct
 AS
 BEGIN
     UPDATE products
-    SET active = 1, updated_at = GETDATE()
+    SET active = 1
     WHERE id = @id AND active = 0
 END;
 GO
