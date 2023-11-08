@@ -1,4 +1,4 @@
-USE store; -- Cambia al contexto de la base de datos 'store' (si ya existe)
+USE store_local; -- Cambia al contexto de la base de datos 'store' (si ya existe)
 GO
 
 -- Table of products

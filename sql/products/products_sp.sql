@@ -1,4 +1,4 @@
-USE store; -- Cambia al contexto de la base de datos 'store' (si ya existe)
+USE store_local; -- Cambia al contexto de la base de datos 'store' (si ya existe)
 GO
 
 -- Crear producto
@@ -15,7 +15,7 @@ BEGIN
 END;
 GO
 
-SELECT * FROM products GO
+
 
 /* EXEC CreateProduct 
     @name = 'Nombre del Producto',
